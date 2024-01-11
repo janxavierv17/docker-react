@@ -1,0 +1,12 @@
+sudo: required
+services:
+    # install docker cli
+    - docker
+
+before_install:
+    # refer to the image in name instead of a random unique id
+    - docker build -t jan/docker-react -f Dockerfile.dev .
+
+# Series of commands to run our tests.
+scripts:
+    - docker run jan/docker-react npm run test
