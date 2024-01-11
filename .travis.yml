@@ -22,6 +22,6 @@ deploy:
     bucket_path: "frontend"
     # When a pr is merged to master our travis conf will deploy our application.
     on:
-        branch: master
+        branch: main
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
