@@ -2,8 +2,6 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
 
 # testing
 /coverage
@@ -12,10 +10,11 @@
 /build
 
 # misc
+.env
 .DS_Store
 .env.local
-.env.development.local
 .env.test.local
+.env.development.local
 .env.production.local
 
 npm-debug.log*
