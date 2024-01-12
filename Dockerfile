@@ -10,7 +10,6 @@ COPY . .
 
 RUN npm run build
 
-
 # Previous statement will terminate and run the below statement
 FROM nginx
 

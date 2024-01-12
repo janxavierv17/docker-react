@@ -4,7 +4,7 @@ services:
     - docker
 
 before_install:
-    # refer to the image in name instead of a random unique id
+    # refer to the image by tag instead of a random unique id
     - docker build -t jan/docker-react -f Dockerfile.dev .
 
 # Series of commands to run our tests.
@@ -23,5 +23,5 @@ deploy:
     # When a pr is merged to master our travis conf will deploy our application.
     on:
         branch: main
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+    access_key_id: "$AWS_ACCESS_KEY"
+    secret_access_key: "$AWS_SECRET_KEY"
