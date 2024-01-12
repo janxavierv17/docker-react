@@ -9,7 +9,7 @@ before_install:
 
 # Series of commands to run our tests.
 scripts:
-    - docker run jan/docker-react npm run test
+    - docker run -e CI=true jan/docker-react npm run test
 
 # Deploy our application to AWS
 deploy:
