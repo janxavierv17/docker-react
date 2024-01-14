@@ -23,5 +23,5 @@ deploy:
     # When a pr is merged to master our travis conf will deploy our application.
     on:
         branch: main
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+    access_key_id: "$AWS_ACCESS_KEY"
+    secret_access_key: "$AWS_SECRET_KEY"
