@@ -9,7 +9,7 @@ before_install:
 
 # Series of commands to run our tests.
 scripts:
-    - docker run -e CI=true jan/docker-react npm run test
+    - docker run jan/docker-react npm run test
 
 # Deploy our application to AWS
 deploy:
@@ -23,5 +23,5 @@ deploy:
     # When a pr is merged to master our travis conf will deploy our application.
     on:
         branch: main
-    access_key_id: "$AWS_ACCESS_KEY"
-    secret_access_key: "$AWS_SECRET_KEY"
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
