@@ -1,27 +1,27 @@
-sudo: required
-services:
-    # install docker cli
-    - docker
+# sudo: required
+# services:
+#     # install docker cli
+#     - docker
 
-before_install:
-    # refer to the image by tag instead of a random unique id
-    - docker build -t jan/docker-react -f Dockerfile.dev .
+# before_install:
+#     # refer to the image by tag instead of a random unique id
+#     - docker build -t jan/docker-react -f Dockerfile.dev .
 
-# Series of commands to run our tests.
-scripts:
-    - docker run jan/docker-react npm run test
+# # Series of commands to run our tests.
+# scripts:
+#     - docker run jan/docker-react npm run test
 
-# Deploy our application to AWS
-deploy:
-    provider: elasticbeanstalk
-    region: "ap-southeast-2"
-    app: "frontend"
-    env: "Frontend-env"
-    bucket_name: "elasticbeanstalk-ap-southeast-2-528247569242"
-    # Initially it won't exist. The name of the bucket path will be created on our first deployment.
-    bucket_path: "frontend"
-    # When a pr is merged to master our travis conf will deploy our application.
-    on:
-        branch: main
-    access_key_id: "$AWS_ACCESS_KEY"
-    secret_access_key: "$AWS_SECRET_KEY"
+# # Deploy our application to AWS
+# deploy:
+#     provider: elasticbeanstalk
+#     region: "ap-southeast-2"
+#     app: "frontend"
+#     env: "Frontend-env"
+#     bucket_name: "elasticbeanstalk-ap-southeast-2-528247569242"
+#     # Initially it won't exist. The name of the bucket path will be created on our first deployment.
+#     bucket_path: "frontend"
+#     # When a pr is merged to master our travis conf will deploy our application.
+#     on:
+#         branch: main
+#     access_key_id: "$AWS_ACCESS_KEY"
+#     secret_access_key: "$AWS_SECRET_KEY"
